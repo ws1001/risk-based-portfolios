@@ -42,7 +42,7 @@ prices = get_data(tickers)
 #    st.write(prices)
 
 # offer option to see the plot of the prices
-expand_plot = st.beta_expander("Plot of prices")
+expand_plot = st.beta_expander("Prices")
 expand_plot.line_chart(prices)
 
 #if st.sidebar.checkbox('See plot of prices'):
@@ -436,3 +436,6 @@ expand_drawdown = st.beta_expander("Drawdowns")
 drawdowns = drawdown(portfolio_rets)['Drawdowns']
 expand_drawdown.line_chart(drawdowns)
     
+# offer option to show shares history
+expand_shares = st.beta_expander("Shares History")
+expand_shares.write(portfolio_shares)
